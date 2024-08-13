@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>List of Makanans with Barcodes and QR Codes</title>
+</head>
+<body>
+    <h2>List of Makanans with Barcodes and QR Codes</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Makanan</th>
+                <th>Kode Makanan</th>
+                <th>Harga</th>
+                <th>Kategori</th>
+                <th>Barcode</th>
+                <th>QR Code</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% makanans.forEach(makanan => { %>
+            <tr>
+                <td><%= makanan.id %></td>
+                <td><%= makanan.nama_makanan %></td>
+                <td><%= makanan.kode_makanan %></td>
+                <td><%= makanan.harga_makanan %></td>
+                <td><%= makanan.kategori_makanan %></td>
+                <td>
+                    <img src="<%= makanan.barcodeBase64 %>" alt="Barcode" />
+                </td>
+                <td>
+                    <img src="<%= makanan.qrCodeBase64 %>" alt="QR Code" />
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+1. 
+
+-- Create the database
+CREATE DATABASE IF NOT EXISTS node_crudd;
+
+-- Use the database
+USE node_crudd;
+
+-- Create the table 'makanans'
+CREATE TABLE IF NOT EXISTS makanans (
+    id INT AUTO_INCREMENT PRIMARY KEY,  -- Sequelize automatically adds this by default if you don't define a primary key
+    nama_makanan VARCHAR(255),
+    kode_makanan VARCHAR(255),
+    harga_makanan VARCHAR(255),
+    kategori_makanan VARCHAR(255),
+    gambar_makanan VARCHAR(255),
+    url VARCHAR(255),
+    createdAt DATETIME NOT NULL,  -- Sequelize will add this by default for the timestamp fields
+    updatedAt DATETIME NOT NULL   -- Sequelize will add this by default for the timestamp fields
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+2. 
+
+-- Use the appropriate database
+USE node_crudd;
+
+-- Insert dummy data into the makanans table
+INSERT INTO makanans (nama_makanan, kode_makanan, harga_makanan, kategori_makanan, gambar_makanan, url, createdAt, updatedAt)
+VALUES 
+('Nasi Goreng', 'NG001', '15000', 'Makanan Utama', 'nasi_goreng.jpg', 'http://example.com/nasi_goreng.jpg', NOW(), NOW()),
+('Mie Goreng', 'MG002', '12000', 'Makanan Utama', 'mie_goreng.jpg', 'http://example.com/mie_goreng.jpg', NOW(), NOW()),
+('Sate Ayam', 'SA003', '20000', 'Makanan Utama', 'sate_ayam.jpg', 'http://example.com/sate_ayam.jpg', NOW(), NOW()),
+('Ayam Bakar', 'AB004', '25000', 'Makanan Utama', 'ayam_bakar.jpg', 'http://example.com/ayam_bakar.jpg', NOW(), NOW()),
+('Bakso', 'BK005', '13000', 'Makanan Ringan', 'bakso.jpg', 'http://example.com/bakso.jpg', NOW(), NOW()),
+('Gado-Gado', 'GG006', '14000', 'Makanan Sehat', 'gado_gado.jpg', 'http://example.com/gado_gado.jpg', NOW(), NOW()),
+('Nasi Uduk', 'NU007', '16000', 'Makanan Utama', 'nasi_uduk.jpg', 'http://example.com/nasi_uduk.jpg', NOW(), NOW()),
+('Soto Ayam', 'SA008', '18000', 'Makanan Utama', 'soto_ayam.jpg', 'http://example.com/soto_ayam.jpg', NOW(), NOW()),
+('Rendang', 'RD009', '30000', 'Makanan Utama', 'rendang.jpg', 'http://example.com/rendang.jpg', NOW(), NOW()),
+('Pempek', 'PP010', '17000', 'Makanan Ringan', 'pempek.jpg', 'http://example.com/pempek.jpg', NOW(), NOW());
